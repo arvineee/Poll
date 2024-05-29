@@ -1,0 +1,8 @@
+distlib==0.3.8
+filelock==3.13.4
+gunicorn==22.0.0
+npm==0.1.1
+optional-django==0.1.0
+packaging==24.0
+platformdirs==4.2.0
+virtualenv==20.25.3
