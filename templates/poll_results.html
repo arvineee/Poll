@@ -1,30 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Poll Results</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Poll Results</h1>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Votes</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for vote in votes %}
-                <tr>
-                    <td>{{ vote.subject }}</td>
-                    <td>{{ vote.count }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="container">
+        <h1 class="mt-5">Poll Results</h1>
+        <ul class="list-group mt-3">
+            {% for vote in votes %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ vote['subject'] }}
+                <span class="badge badge-primary badge-pill">{{ vote['count'] }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('download_poll_results') }}" class="btn btn-primary mt-4">Download Results as PDF</a>
+        <a href="{{ url_for('reset_db') }}" class="btn btn-primary mt-4">Start New Votting</a>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
