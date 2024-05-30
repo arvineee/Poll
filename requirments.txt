@@ -3,10 +3,10 @@ distlib==0.3.8
 filelock==3.13.4
 gunicorn==22.0.0
 npm==0.1.1
-
+numpy @ file:///home/builder/.termux-build/python-numpy/src/dist/numpy-1.26.4-cp311-cp311-linux_aarch64.whl
 optional-django==0.1.0
 packaging==24.0
-
+pandas @ file:///home/builder/.termux-build/python-pandas/src/dist/pandas-2.2.2-cp311-cp311-linux_aarch64.whl
 pillow==10.3.0
 platformdirs==4.2.0
 python-dateutil==2.9.0.post0
@@ -16,3 +16,4 @@ six==1.16.0
 tzdata==2024.1
 virtualenv==20.25.3
 flask
+flask_mail
